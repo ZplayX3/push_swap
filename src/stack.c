@@ -25,3 +25,12 @@ t_stack	*stack_before_bottom(t_stack *stack)
 		stack = stack->next;
 	return (stack);
 }
+
+t_stack	*create_stack(int i)
+{
+	t_stack *new;
+
+	new = malloc(sizeof * new);
+	if (!new)
+		return (NULL);
+}

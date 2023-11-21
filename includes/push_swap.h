@@ -25,6 +25,7 @@ typedef struct	s_stack
     int index;
     int pos;
     int target;
+    int	len;
     struct s_stack  *next;
 }   t_stack;
 //	        UTILS
