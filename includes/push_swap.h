@@ -29,7 +29,8 @@ typedef struct	s_stack
 }	t_stack;
 //	        UTILS
 void	ft_putstr(char *str);
-void	free_stack(t_stack **stack)
+void	free_stack(t_stack **stack);
+int	ft_atoi(const char *nptr);
 //          STACK
 t_stack	*stack_bottom(t_stack *src);
 t_stack	*stack_before_bottom(t_stack *stack);
@@ -69,6 +70,6 @@ int input_check(char **av);
 void	exit_error(t_stack **stack_a, t_stack **stack_b);
 //			ERRORS_UTILS
 int is_digit(char c);
-int is_sign (char c);
+int is_sign(char c);
 int nb_cmp(consst char *s1, const char *s2);
 #endif
