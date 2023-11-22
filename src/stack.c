@@ -6,7 +6,7 @@
 /*   By: tlachman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:05:11 by tlachman          #+#    #+#             */
-/*   Updated: 2023/11/15 13:40:38 by tlachman         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:06:02 by tlachman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_stack	*stack_before_bottom(t_stack *stack)
 
 t_stack	*create_stack(int i)
 {
-	t_stack *new;
+	t_stack	*new;
 
 	new = malloc(sizeof * new);
 	if (!new)

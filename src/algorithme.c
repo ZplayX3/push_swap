@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorithme.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlachman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/22 10:04:01 by tlachman          #+#    #+#             */
+/*   Updated: 2023/11/22 10:05:34 by tlachman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 // index final doit prendre en paramètre non pas src mais sa copie
-int index_final(t_stack *src, int i)
+int	index_final(t_stack *src, int i)
 {
-    int j;
-	int k;
+	int	j;
+	int	k;
 
-    j = 0;
+	j = 0;
 	k = 0;
-    while (src[j])
-    {
-        if (i > src[j])
+	while (src[j])
+	{
+		if (i > src[j])
 			k++;
 		j++;
-    }
+	}
 	return (k);
 }
 
@@ -25,7 +37,7 @@ int	bit_number(t_stack *src)
 	i = 0;
 	while (x)
 	{
-		x = x/2;
+		x = x / 2;
 		i++;
 	}
 	return (i);
@@ -44,7 +56,7 @@ void	radix(t_stack *src)
 		j = 0;
 		while (j < src->len)
 		{
-			if (index_final(*src, src[0])>> i & 1)
+			if (index_final(*src, src[0]) >> i & 1)
 				ra(*src);
 			else
 				pb(*src, *dest);

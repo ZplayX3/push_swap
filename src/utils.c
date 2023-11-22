@@ -6,7 +6,7 @@
 /*   By: tlachman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:29:09 by tlachman          #+#    #+#             */
-/*   Updated: 2023/11/15 13:41:19 by tlachman         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:06:41 by tlachman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,17 @@ void	ft_putstr(char *str)
 	}
 }
 
+void	free_stack(t_stack **stack)
+{
+	t_stack *tmp;
+
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL
+}
