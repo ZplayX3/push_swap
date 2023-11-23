@@ -17,11 +17,11 @@ static int  number(char *av)
     int i;
 
     i = 0;
-    if (is_sign(av[i]) &&av[i + 1] != '/0')
+    if (is_sign(av[i]) && av[i + 1] != '\0')
         i++;
     while (av[i] && is_digit(av[i]))
         i++;
-    if (av[i] != '/0' && !is_digit(av[i]))
+    if (av[i] != '\0' && !is_digit(av[i]))
         return (0);
     return (1);
 }
@@ -37,7 +37,7 @@ static int  duplicates(char **av)
         j = 1;
         while (av[j])
         {
-            if (j != i && nb_cmp(av[i], av[j] == 0))
+            if (j != i && nb_cmp(av[i], av[j]) == 0)
                 return (1);
             j++;
         }
@@ -55,9 +55,9 @@ static int  zero(char *av)
         i++;
     while (av[i] && av[i] == '0')
         i++;
-    if (av[i]!= '/0')
+    if (av[i]!= '\0')
         return (0);
-    return (1;)
+    return (1);
 }
 
 int input_check(char **av)

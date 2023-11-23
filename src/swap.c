@@ -28,19 +28,19 @@ static void	swap(t_stack *src)
 
 void	sa(t_stack **stack_a)
 {
-	swap(stack_a);
+	swap(*stack_a);
 	ft_putstr("sa/n");
 }
 
 void	sb(t_stack **stack_b)
 {
-	swap(stack_b);
+	swap(*stack_b);
 	ft_putstr("sb/n");
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	swap(stack_a);
-	swap(stack_b);
+	swap(*stack_a);
+	swap(*stack_b);
 	ft_putstr("ss/n");
 }

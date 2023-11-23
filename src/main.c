@@ -16,9 +16,9 @@ int is_sorted (t_stack *src)
 {
     while (src->next != NULL)
     {
-        if (stack->value > stack->next->value)
+        if (src->value > src->next->value)
             return (0);
-        stack - stack-> next;
+       src = src->next;
     }
     return (1);
 }
@@ -26,10 +26,10 @@ static void push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
     if (stack_size == 2 && !is_sorted(*stack_a))
         sa(stack_a);
-    else if (stack_size == 3)
+    //else if (stack_size == 3)
         // algo pour un tri a 3
     else if (stack_size > 3 && !is_sorted(*stack_a))
-        //parsing vers le radix
+        radix(*stack_a, *stack_b);
 }
 
 int main(int ac, char **av)
@@ -42,5 +42,11 @@ int main(int ac, char **av)
         return (0);
     if (!input_check(av))
         exit_error(NULL, NULL);
+    stack_b = NULL;
+    stack_a = fill_stack(ac, av);
+    stack_size = get_stack_size(stack_a);
+    push_swap(&stack_a, &stack_b, stack_size);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
     return (0);
 }

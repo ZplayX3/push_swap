@@ -11,19 +11,16 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// index final doit prendre en paramètre non pas src mais sa copie
 int	index_final(t_stack *src, int i)
 {
-	int	j;
 	int	k;
 
-	j = 0;
 	k = 0;
-	while (src[j])
+	while (src)
 	{
-		if (i > src[j])
+		if (i > src->value)
 			k++;
-		j++;
+		src = src->next;
 	}
 	return (k);
 }
@@ -33,7 +30,7 @@ int	bit_number(t_stack *src)
 	int	i;
 	int	x;
 
-	x = (src->len - 1;);
+	x = (get_stack_size(src) - 1);
 	i = 0;
 	while (x)
 	{
@@ -43,27 +40,30 @@ int	bit_number(t_stack *src)
 	return (i);
 }
 
-void	radix(t_stack *src)
+void	radix(t_stack *src, t_stack *dest)
 {
 	int	x;
 	int	i;
 	int	j;
+	int	len;
+
+	len = get_stack_size(src);
 
 	i = 0;
-	x = bit_number(*src);
+	x = bit_number(src);
 	while (i < x)
 	{
 		j = 0;
-		while (j < src->len)
+		while (j < len)
 		{
-			if (index_final(*src, src[0]) >> i & 1)
-				ra(*src);
+			if (index_final(src, src->value) >> i & 1)
+				ra(&src);
 			else
-				pb(*src, *dest);
+				pb(&src, &dest);
 			j++;
 		}
 		while (dest)
-			pa(*src, *dest);
+			pa(&src, &dest);
 		i++;
 	}
 }

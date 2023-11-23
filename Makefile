@@ -5,8 +5,7 @@ NAME = push_swap
 SRC_PATH = src/
 OBJ_PATH = obj/
 
-SRC =	
-		main.c \
+SRC 	= main.c \
 		algorithme.c \
 		errors.c \
 		errors_utils.c \
@@ -15,7 +14,8 @@ SRC =
 		swap.c \
 		rotate.c \
 		reverse_rotate.c\
-		stack.c
+		stack.c \
+		initialization.c
 SRCS = $(addprefix $(SRC_PATH), $(SRC))
 OBJ = $(SRC:.c=.o)
 OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
