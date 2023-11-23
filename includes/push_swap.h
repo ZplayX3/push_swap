@@ -28,7 +28,7 @@ typedef struct	s_stack
 //	        UTILS
 void	ft_putstr(char *str);
 void	free_stack(t_stack **stack);
-int	ft_atoi(const char *nptr);
+long int	ft_atoi(const char *nptr);
 //          STACK
 t_stack	*stack_bottom(t_stack *src);
 t_stack	*stack_before_bottom(t_stack *stack);
@@ -55,6 +55,11 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 int	index_final(t_stack *src, int i);
 int	bit_number(t_stack *src);
 void	radix(t_stack *src, t_stack *dest);
+void    trialgo(t_stack **stack);
+void   trialgo_bis(t_stack **stack);
+void    mins(t_stack *stack_a, int *min);
+void    to_the_top(t_stack *stack_a, int index);
+void    pentalgo(t_stack *stack_a, t_stack *stack_b);
 //			MAIN
 int is_sorted (t_stack *src);
 //			ERRORS

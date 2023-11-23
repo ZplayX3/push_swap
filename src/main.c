@@ -26,9 +26,11 @@ static void push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
     if (stack_size == 2 && !is_sorted(*stack_a))
         sa(stack_a);
-    //else if (stack_size == 3)
-        // algo pour un tri a 3
-    else if (stack_size > 3 && !is_sorted(*stack_a))
+    else if (stack_size == 3)
+        trialgo(stack_a);
+    else if (stack_size > 3 && stack_size<= 5 && !is_sorted(*stack_a))
+        pentalgo(*stack_a, *stack_b);
+    else if (stack_size > 5 && !is_sorted(*stack_a))
         radix(*stack_a, *stack_b);
 }
 

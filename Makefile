@@ -15,7 +15,9 @@ SRC 	= main.c \
 		rotate.c \
 		reverse_rotate.c\
 		stack.c \
-		initialization.c
+		initialization.c \
+		anne_trialgo.c \
+		pentalgo.c
 SRCS = $(addprefix $(SRC_PATH), $(SRC))
 OBJ = $(SRC:.c=.o)
 OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
@@ -32,10 +34,10 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean :
-	rm -f $(OBJ_PATH)
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 

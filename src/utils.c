@@ -39,9 +39,9 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-int	ft_atoi(const char *nptr)
+long int	ft_atoi(const char *nptr)
 {
-	int	nb;
+	long int	nb;
 	int	i;
 	int	sign;
 
