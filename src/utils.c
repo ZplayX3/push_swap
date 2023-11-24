@@ -6,7 +6,7 @@
 /*   By: tlachman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:29:09 by tlachman          #+#    #+#             */
-/*   Updated: 2023/11/22 10:06:41 by tlachman         ###   ########.fr       */
+/*   Updated: 2023/11/24 09:02:16 by tlachman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putstr(char *str)
 
 void	free_stack(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!stack || !(*stack))
 		return ;
@@ -41,9 +41,9 @@ void	free_stack(t_stack **stack)
 
 long int	ft_atoi(const char *nptr)
 {
-	long int	nb;
-	int	i;
-	int	sign;
+	long	nb;
+	int		i;
+	int		sign;
 
 	i = 0;
 	nb = 0;

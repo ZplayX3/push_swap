@@ -6,11 +6,12 @@
 /*   By: tlachman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:04:01 by tlachman          #+#    #+#             */
-/*   Updated: 2023/11/22 10:05:34 by tlachman         ###   ########.fr       */
+/*   Updated: 2023/11/24 07:56:27 by tlachman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 int	index_final(t_stack *src, int i)
 {
 	int	k;
@@ -48,7 +49,6 @@ void	radix(t_stack *src, t_stack *dest)
 	int	len;
 
 	len = get_stack_size(src);
-
 	i = 0;
 	x = bit_number(src);
 	while (i < x)
