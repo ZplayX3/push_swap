@@ -27,7 +27,7 @@ static void	push_swap(t_stack **a, t_stack **b, int size, t_stack **cpy)
 {
 	if (size == 2 && !is_sorted(*a))
 		sa(a);
-	else if (size == 3)
+	else if (size == 3 && !is_sorted(*a))
 		trialgo(a);
 	else if (size > 3 && size <= 5 && !is_sorted(*a))
 		pentalgo(*a, *b);
