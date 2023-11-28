@@ -30,7 +30,7 @@ static void	push_swap(t_stack **a, t_stack **b, int size, t_stack **cpy)
 	else if (size == 3 && !is_sorted(*a))
 		trialgo(a);
 	else if (size > 3 && size <= 5 && !is_sorted(*a))
-		pentalgo(*a, *b);
+		pentalgo(a, b);
 	else if (size > 5 && !is_sorted(*a))
 		radix(*a, *b, *cpy);
 }

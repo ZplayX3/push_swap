@@ -58,8 +58,8 @@ void	radix(t_stack *src, t_stack *dest, t_stack *cpy);
 void	trialgo(t_stack **stack);
 void	trialgo_bis(t_stack **stack);
 void	mins(t_stack *stack_a, int *min);
-void	to_the_top(t_stack *stack_a, int index);
-void	pentalgo(t_stack *stack_a, t_stack *stack_b);
+void	to_the_top(t_stack **stack_a, int index);
+void	pentalgo(t_stack **stack_a, t_stack **stack_b);
 //			MAIN
 int		is_sorted(t_stack *src);
 //			ERRORS

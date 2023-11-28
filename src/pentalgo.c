@@ -44,49 +44,49 @@ void	mins(t_stack *stack_a, int *min)
 	printf("min:%d\n", *min);
 }
 
-void	to_the_top(t_stack *stack_a, int index)
+void	to_the_top(t_stack **stack_a, int index)
 {
 	int	i;
 
 	i = index;
-	if (i <= get_stack_size(stack_a) / 2)
+	if (i <= get_stack_size(*stack_a) / 2)
 	{
 		printf("i've been there\n");
 		while (i)
 		{
 			printf("i in while%d\n", i);
-			ra(&stack_a);
+			ra(stack_a);
 			i--;
 		}
 	}
 	else
 	{
 		printf("or there\n");
-		while (i < get_stack_size(stack_a))
+		while (i < get_stack_size(*stack_a))
 		{
 			printf("and i got to the while\n");
-			rra(&stack_a);
+			rra(stack_a);
 			i++;
 		}
 	}
 	index = 0;
 }
 
-void	pentalgo(t_stack *stack_a, t_stack *stack_b)
+void	pentalgo(t_stack **stack_a, t_stack **stack_b)
 {
 	int	min;
 
-	mins(stack_a, &min);
+	mins(*stack_a, &min);
 	to_the_top(stack_a, min);
-	pb(&stack_a, &stack_b);
+	pb(stack_a, stack_b);
 	printf("stack a:\n");
-	print_stack(stack_a);
+	print_stack(*stack_a);
 	printf("stack b:\n");
-	print_stack(stack_b);
-	mins(stack_a, &min);
+	print_stack(*stack_b);
+	mins(*stack_a, &min);
 	to_the_top(stack_a, min);
-	pb(&stack_a, &stack_b);
-	trialgo(&stack_a);
-	pa(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
+	pb(stack_a, stack_b);
+	trialgo(stack_a);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
 }
