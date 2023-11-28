@@ -41,7 +41,7 @@ int	bit_number(t_stack *src)
 	return (i);
 }
 
-void	radix(t_stack *src, t_stack *dest)
+void	radix(t_stack *src, t_stack *dest, t_stack *cpy)
 {
 	int	x;
 	int	i;
@@ -56,7 +56,7 @@ void	radix(t_stack *src, t_stack *dest)
 		j = 0;
 		while (j < len)
 		{
-			if (index_final(src, src->value) >> i & 1)
+			if (index_final(cpy, src->value) >> i & 1)
 				ra(&src);
 			else
 				pb(&src, &dest);

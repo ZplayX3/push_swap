@@ -23,22 +23,23 @@ int	is_sorted(t_stack *src)
 	return (1);
 }
 
-static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
+static void	push_swap(t_stack **a, t_stack **b, int size, t_stack **cpy)
 {
-	if (stack_size == 2 && !is_sorted(*stack_a))
-		sa(stack_a);
-	else if (stack_size == 3)
-		trialgo(stack_a);
-	else if (stack_size > 3 && stack_size <= 5 && !is_sorted(*stack_a))
-		pentalgo(*stack_a, *stack_b);
-	else if (stack_size > 5 && !is_sorted(*stack_a))
-		radix(*stack_a, *stack_b);
+	if (size == 2 && !is_sorted(*a))
+		sa(a);
+	else if (size == 3)
+		trialgo(a);
+	else if (size > 3 && size <= 5 && !is_sorted(*a))
+		pentalgo(*a, *b);
+	else if (size > 5 && !is_sorted(*a))
+		radix(*a, *b, *cpy);
 }
 
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	t_stack	*cpy;
 	int		stack_size;
 
 	if (ac < 2)
@@ -47,9 +48,11 @@ int	main(int ac, char **av)
 		exit_error(NULL, NULL);
 	stack_b = NULL;
 	stack_a = fill_stack(ac, av);
+	cpy = fill_stack(ac, av);
 	stack_size = get_stack_size(stack_a);
-	push_swap(&stack_a, &stack_b, stack_size);
+	push_swap(&stack_a, &stack_b, stack_size, &cpy);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
+	free_stack(&cpy);
 	return (0);
 }

@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-void	mins(t_stack stack_a, int *min)
+void	mins(t_stack *stack_a, int *min)
 {
 	int	index;
 	int	valeur;
 
 	printf("min at start of mins: %d\n", *min);
-	valeur = (*stack_a->value);
+	valeur = (stack_a->value);
 	printf("Valeur : %d\n", valeur);
 	index = 0;
 	while (stack_a)

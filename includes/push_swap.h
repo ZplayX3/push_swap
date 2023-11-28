@@ -54,7 +54,7 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 //			ALGORITHME
 int		index_final(t_stack *src, int i);
 int		bit_number(t_stack *src);
-void	radix(t_stack *src, t_stack *dest);
+void	radix(t_stack *src, t_stack *dest, t_stack *cpy);
 void	trialgo(t_stack **stack);
 void	trialgo_bis(t_stack **stack);
 void	mins(t_stack *stack_a, int *min);
