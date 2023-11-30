@@ -35,11 +35,43 @@ static void	push_swap(t_stack **a, t_stack **b, int size, t_stack **cpy)
 		radix(*a, *b, *cpy);
 }
 
+static t_stack	**dump_truck(t_stack *stack, int ac)
+{
+	t_stack	**garbage;
+	t_stack	*cursor;
+	int		i;
+
+	i = 0;
+	garbage = malloc(sizeof (t_stack *) * (ac - 1));
+	if (!garbage)
+		return (NULL);
+	cursor = stack;
+	while (cursor)
+	{
+		garbage[i++] = cursor;
+		cursor = cursor->next;
+	}
+	return (garbage);
+}
+
+static void	free_garbage(t_stack **garbage, int ac)
+{
+	int	i;
+
+	i = 0;
+	while (i < ac - 1)
+	{
+		free(garbage[i]);
+		i++;
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	t_stack	*cpy;
+	t_stack	**garbage;
 	int		stack_size;
 
 	if (ac < 2)
@@ -50,8 +82,10 @@ int	main(int ac, char **av)
 	stack_a = fill_stack(ac, av);
 	cpy = fill_stack(ac, av);
 	stack_size = get_stack_size(stack_a);
+	garbage = dump_truck(stack_a, ac);
 	push_swap(&stack_a, &stack_b, stack_size, &cpy);
-	free_stack(&stack_a);
+	free_garbage(garbage, ac);
+	free(garbage);
 	free_stack(&stack_b);
 	free_stack(&cpy);
 	return (0);
